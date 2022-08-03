@@ -1,0 +1,297 @@
+body {
+	font-family: 'Montserrat', sans-serif; /*aplicando em todo o corpo da página a fonte importada do Google fonte para nosso HTML*/
+}
+
+header { /*cabeçalho da página dentro do conteúdo do site, tag de conteúdo (head que é tag de estrututra)*/
+	background:#BBBBBB; /*colocando a cor de fundo do cabeçalho:cinza*/
+	padding: 20px 0; /*Dando um espaçamento no cabeçalho aumentando seus espaços cima/baixo. Aumenta o cabeçalho e deixa as coisas mais centralizadas. Tudo dentro dele fica dentro dos limites padding que determinei. Entre as margens e o conteúdo dele eu tenho esse espaçamento de 20 px. Não quero nada colado em suas margens.*/
+}
+
+.caixa{
+	width: 940px; /*demos uma largura fixa para essa página, esse valor já é padrão das pág web (a maioria das boas resoluções é de 1.260px), usando 940px vc está com uma boa margem.*/
+	position: relative; /*Levantamos a caixa, pois precisamos que ela somente levante. O menu não estava dentro da caixa por causa do posicionamento absoluto que fica absoluto em relação a página, o novo ponto inicial dele fica sempre sendo algo selecionado no navegador. Se quero que ele tenha um ponto absoluto (solto do inicial original) mas dentro de uma caixa (preso nela), preciso que ela levante tendo posicionamento relativo.*/
+	margin:  0 auto; /*para centralizar a caixa na página web. Usamos espaço para cima e baixo zero, e, solicitamos que as margens esquerda e direita se calculem sozinhas automaticamente. Essa caixa estará sempre centralizada não imçporta o tamanho da tela (se minimizada ou maximizada)*/
+}
+
+nav{
+	position: absolute; /*alterando o ponto inicial dele; não pode ser estático e nem relativo, posição do ponto inicial dele alterada para outro canto*/
+	top: 110px; /*levando em conta a altura da imagem(240px), calculei onde seria, mais ou menos, o meio do menu navegação.*/
+	right: 0px; /*O menu está absoluto porém levando em consideração à caixa, pois levantamos ela com position relative, e agora ele tem ela por base, e não mais o navegador. Assim fica DENTRO DA CAIXA SEMPRE EM QLQR TAMANHO DE TELA.*/
+}
+
+nav li{ /*seletor de cada intem da minha lista, de todos eles, apenas dos itens*/
+	display: inline; /*transformando cada item da lista, que por padrão de lista vem block, em inline*/
+	margin:  0 0 0 15px; /*espaçamento externo para a esquerda (pois quero que o menu fique posicionado do lado direito) de 15px; para separar mais cada item da lista, o link está dentro do item li, não quero aumentar o conteúdo do item (link), quero espaçar os itens, por isso configuro o margin aqui e não no nav a.*/
+
+}
+
+nav a { /*seletor de todos os links da minha navegação*/
+	text-transform: uppercase; /*colocando em maiúscula todas as letras dos links de navegação*/
+	color: #000000; /*cor da fonte*/
+	font-weight: bold; /*peso da fonte em negrito*/
+	font-size:  22px; /*mudando o tamanho da minha fonte para maior*/
+	text-decoration: none; /*Tirando o sublinhado padrão que veio no link do navegador. Nenhuma decoração no meu texto tira isso*/
+}
+
+nav a:hover{  /*usando a pseudo-classe hover para mapear o comportamento do usuário da página ao passar o mouse por cima do elemento 'nav a'-links de navegação(âncora)*/
+	color: #C78C19; /*muda a cor para amarelo queimado quando o mouse passa por cima do link*/
+	text-decoration: underline; /*sublinhado quando o mouse passa por cima do link*/
+}
+
+.produtos{ /*classe que marca nossa lista ul*/
+	width: 940px; /*como o conteúdo estava todo colado na esquerda porque nosso ul se comporta do tamanho de um bloco ocupando 100% da largura; definimos a largura e a margem similar a do cabçalho.*/
+	margin:  0 auto; /*espaçamento zero pra cima e pra baixo e automático para os lados para centralizar a lista que estava toda para a esquerda.*/
+	padding:  50px 0; /*para afastar o conteúdo da lista do cabeçalho, estava muito colado*/
+}
+
+.produtos li{
+	display: inline-block; /*mistura de estilo de display para ser um inline que consigo mexer na largura/tamanho de seus itens bloqueando o tanto desejado*/
+	text-align:  center; /*centralizando o conteúdo de cada item da lista*/
+	width:  30%; /*temos 100% de largura de página, então cada elemento deniniu-se de dar 1/3 da página ou seja 30%. Com essa largura estamos redistribuindo melhor os elementos.*/
+	vertical-align: top; /*para orientar os elementos do inline-block pela linha de cima*/
+	margin: 0 1.5%; /*espaçamento externo entre os itens da lista dos produtos <ul>: zero para cima/baixo e 1,5 para os lados, totalizando 3% de margem no total, mais os 30% de largura cada item, dá 33%, que vezes 3, temos 99% do elemento principal ocupado. */
+	padding:  30px 20px; /*aumentando o espaçamento interno para descolar a descrição;*/
+	box-sizing:  border-box; /*usado para contornar o aumento da largura dos itens que somou à sua largura de 30% o padding de 20px. Esta propriedade torna o width definitivo, e, os pixels do espaçamento interno ficam dentro dessa conta já definida na largura.*/
+	border-color: #000000; /*montando a borda dos itens da lista: definindo a cor - preta*/
+	border-width: 2px; /*montando a borda dos itens da lista: definindo a largura dessa borada - 2px*/
+	border-style: solid; /*montando a borda dos itens da lista: definindo o seu estili - sólido; Poderia ser dashed ou dotted. */
+	border-radius: 10px; /*montando a borda dos itens da lista: definindo a borda arredondada e o quando será esse arredondamento, o raio da circunferência, da borda. 
+	/*Bordas - Se quisesse fazer só borda para cima, ou só engrossar a parte de cima da borda usaria a propriedade border-top ou border-top-width:10px, posso mexer com cada lado da borda.*/
+	/*Posso declarar a borda de uma vez só definindo seu tamanho, estilo e cor assim -> border: 2px solid #000000;*/
+	/*Poderia declarar uma medida para cada canto: border-radius-top-left: 5xp (canto superior esquerdo); border-radius-bottom-right(canto inferior direito). Se quiser mexer diferente em todos os cantos com o border-radius de umsó vez pode: border-radius: 10px 20px 30px 40px; cada canto com um tamannho de raio*/
+}
+.produtos li:hover{ /*usando a pseudo-classe hover para mapear o comportamento do usuário da página ao passar o mouse por cima do elemento*/
+	border-color: #C78C19; /*alterando a cor quando o mouse está por cima, para a mesma cor dos links quando o mouse passa*/
+
+}
+
+.produtos li:active{ /*pseudo-classe :active sonda o comportamento de quando o mouse está com o clique pressionando*/
+	border-color: #088C19; /*ao clicar no item da lista este fica na cor verde*/
+}
+.produtos li:hover h2{ /*Alterando elemento, dentro de elemento. Cada item da lista tem mais de um tipo de fonte. Preciso ser específica que falo do H2. Quando o mouse estiver por cima do LI dos PRODUTOS (.produto li), eu quero alterar o h2*/
+	font-size: 34px; /*quando o mouse passar por cima do LI dos PRODUTOS, seu H2 irá mudar de tamanho aumentando de 30 para 34px.*/
+
+}
+
+.produtos h2 { /*ajustando a fonte dos títulos dos itens da lista ul de produtos*/
+	font-size: 30px;
+	font-weight:  bold;
+}
+
+.produto-descricao{ /*classe para ajustar a descrição do produto dentro do <P>*/
+	font-size: 18px;
+}
+
+
+.produto-preco{  /*classe para ajustar o preço do produto dentro do <P>*/
+	font-size:  22px;
+	font-weight:  bold;
+	margin-top: 10px; /*espaçamento externo para cima de 10px para separar o preço da descrição que estavam muito colados*/
+}
+
+
+footer{
+	text-align: center; /*centralizando todo o conteúdo do rodapé até o logo*/
+	background: url("bg.jpg"); /*Colocando uma imagem de fundo através da declaração da sua URL ou seja do endereço daquela imagem. Ela é pequena e o CSS replica até preencher todo o espaço do elemento. O logo veio branco, veio desenhado para ter uma imagem de fundo(imagem é diferente de cor, por isso não colocamos a cor no backgraund: #CCCCCC;*/
+	padding: 40px 0; /*espaçamento interno pra cima/baixo, para distanciar a imagem do inicio do rodapé, para dar uma configuração melhor*/
+}
+
+.copyright{
+
+	color: #FFFFFF; /*alterando a cor padrão que veio na letra do texto do rodapé no navegador para branca*/
+	font-size: 13px; /*diminuindo a fonte do texto*/
+	margin: 20px 0 0; /*espaçamento externo, criando margem superior de 20 px para afastar o texto da logo-imagem*/
+
+}
+
+
+form {
+	margin:  40px 0; /*dando uma margem externa de 40px pra cima/baixo do formulário com relação ao header e footer para iniciar os trabalhos com o formulário vizualizando melhor seus inputs*/
+	padding: 20px;
+}
+
+form label, form legend {
+	display: block; /*mudando a configuração padrão do campo de formulário (label e inputs) para ocuparem toda a tela, fazendo a quebra de linha, senão fica tudo um do lado do outro.*/
+	font-size: 20px; /*aumentando a fonte*/
+	margin: 0 0 10px; /*criando um espaço entre a label e o campo que vem logo abaixo dela. Margem abaixo de 10px.*/
+}
+
+.input-padrao{
+	display: block;
+	margin: 0 0 20px; /*margem para baixo*/
+	padding: 10px 25px; /*espaçamento interno 10px cima/baixo e 25px direita/esquerda*/
+	width: 50%; /*colocando o input para ocupar 50% da página*/
+}
+
+.checkbox{
+	margin: 20px 0; /*margem para afaztar o checkbox dos itens acima e abaixo dele*/
+}
+
+.enviar{ /*colocando o style do meu botão submit, criamos a classe enviar para ele*/
+	width: 40%; /*aumentamos ele para que ocupe 40% da página*/
+	padding: 15px 0; /*mexendo no padding para dar um espaçamento interno entre as bordas e o texto. Demos cima/baixo de 15px,e, zero para as laterais pois não precisaram*/
+	background: orange; /*colocando um fundo laranja no nosso botão*/
+	color:  white; /*alterando a cor da fonte para branca para gerar um bom contraste com o fundo*/
+	font-weight: bold; /*colocando o texto do botão em negrito*/
+	font-size: 18px; /*aumentando a fonte do texto do nosso botão*/
+	border: none; /*retirando a borda padrãodo navegador que veio no botão do formulário*/
+	border-radius: 5px; /*colocando canto arredondado de 5px no nosso botão*/
+	transition: 1s all; /*transação visual do elemento: definindo o tempo em que será feita a transição de cor e escala do botão submit, por isso é all e não só backgraund  ou scale, são todas.*/
+	cursor: pointer; /*propriedade que altera o aspecto do cursor virando mão para indicar que é um elemento clicável*/
+
+}
+.enviar:hover{ /*quando o mouse está por cima do botão alterar seu comportamento*/
+	background: darkorange; /*alterando o fundo para laranja escuro quando o mouse está em cima do botão. Definimos o tempo de transição no próprio elemento que está sofrendo a modificação, no caso logo acima neste código na classe enviar.*/
+	transform: scale(1.2); /*Essa propriedade de escala/medida aumenta o elemento de modo, se quero aumentar em 20%, então coloco a escala de 1.2 (ele será multiplicado por 1.2).Essa propriedade aumenta o elemento como um todo, sem eu ter que calcular qual seria seu aumento de fonte, padding, margin, radio da borda...*/
+}
+
+table{ /*seletor da tabela - estilizando nossa tabela*/
+	margin:  20px 15px 40px; /*criando espaçamento de 20px cima, 15px para a direita e 40px baixo*/
+}
+
+thead{ /*seletor do cabeçalho da tabela*/
+	background: #555555;
+	color: white;
+	font-weight:  bold;
+}
+
+td,  th { /*seletor das células da nossa tabela, células do conteúdo e também do cabeçalho da tabela: <td> e <th>*/
+	border: 1px solid #000000; /*criando uma borda para todos os itens da tabela*/
+	padding: 8px 15px; /*espaçamentos internos de cima/baixo 8px, e, lateral de 15px*/
+}
+
+/*css da página inicial*/
+.banner{
+	width: 100%; /*tamanho diferenciado por isso não entrou no main; colocamos ocupando 100% da página*/
+
+}
+.titulo-principal{ /*seletor de classe dada aos nossos títulos h2 e h3, sobre a barbearia e benefícios em nosso main*/
+	text-align: center;
+	font-size: 2em; /*medida proporcional para pixels, 2 em, duas vezes o tamanho base da fonte.*/
+	margin: 0 0 1em; /*espaçamento para baixo proporcional ao tamanho da fonte, no caso 2x o da principal*/
+	clear: left; /*propriedade clear que limpa, e valor do que estou limpando que é o float: left; pois este,  usado na img utensilios, fez com que todos os elementos da página subissem para preencher os novos espaços, a partir daqui, do título de Benefícios para baixo. Com o clear ajeito isso colocano benefícios na linha logo abaixo da imagem.*/
+}
+
+.principal {
+	padding: 3em 0; /*colocamos o mesmo padding que está nos outros elementos, seção benefícios etc*/
+	background: #FEFEFE; /*um branco elegante*/
+	width:  940px;
+	margin: 0 auto;
+}
+
+.principal p { /*estilizando os parágrafos que estão na classe .principal (na parte de sobre a barbearia Alura)*/
+	margin:  0 0 1em; /*criando uma margem para baixo proporcional ao tamanho da fonte dos parágrafos*/
+}
+
+.principal strong{ /*seletor de onde tem strong na classe principal (a sobre a Barbearia Alura)*/
+	font-weight: bold;
+}
+
+.principal em { /*seletor de onde tem ênfase na classe principal (a sobre a Barbearia Alura)*/
+	font-style: italic;
+}
+
+.utensilios { /*seletor da imagem dos utensílios do barbeiro*/
+	width: 120px; /*diminuindo o tamanho da imagem para o que nós desejamos*/
+	float: left; /*colocando através dessa propriedade e valor o meu elemento imagem para flutuar ma página deixando sua sombra nela para ser rodeada pelo texto*/
+	margin: 0 20px 20px 0; /*definindo margens para a direita e para baixo da imagem para se adaptar melhor com o texto que a rodeia*/
+}
+
+.mapa { /*seletor da seção do mapa*/
+	padding: 3em 0; /*espaçamento interno de 3em pra cima e pra baixo, proporcional ao tamanho da fonte do nosso site*/
+	background: linear-gradient(#FEFEFE, #888888); /*transição de cor, degradê de cores*/
+}
+
+.mapa-conteudo { /*ajustando o tamanho do próprio mapa com a div que o envolve, colocando o mesmo tamanho da tela do cabeçalho*/
+	width: 940px;
+	margin: 0 auto; /*centralizando o mapa com margem lateral automática*/
+}
+
+.mapa p { /*seletor para ajustar o parágrafo que está dentro da classe mapa*/
+	margin: 0 0 2em; /*colocando um espaçamento externo de zero pra cima, zero pra direita e duas vezes proporcional ao tamanho da fonte para baixo*/
+	text-align: center; /*centralizando esse parágrafo*/
+}
+
+.beneficios {
+	padding: 3em 0; /*mesmo espaçamento interno que definimos no mapa*/
+	background: #888888;	
+}
+
+.conteudo-beneficios { /*seletor da div com a classe conteudo-beneficios que engloba sua lista e imagem*/
+	width: 640px; /*definindo a largura*/
+	margin: 0 auto; /*centralizando todo esse conteúdo*/
+}
+
+.lista-beneficios {
+	width: 40%; /*largura de 40%, que completa 100% com os 60% da imagem-benefícios, que é o outro composto do conteúdo-beneficios*/
+	display: inline-block; /*mistura ambas as formas de exibição e consigo mexer no tamanho ajustando os 40 + os 60 e preenchedo os 100% de largura definida (640px).*/
+	vertical-align: top; /*alinhar os dois itens pela sua linha de cima e não de baixo (padrão)*/
+}
+
+.itens {
+	line-height: 1.5; /*Texto com espaçamento maior, para dar um distanciamento maior entre as linhas da lista: esta propriedade define a altura da linha, geralmente é do tamanho da fonte, mas estamos configurando aqui o tamanho da fonte mais 50% */
+
+}
+
+.itens:first-child { /*usando pseudo-class primeiro filho para mexer apenas no primeiro elemento da lista, tornando meu primeiro item em negrito*/
+	font-weight: bold;
+}
+
+.itens:before{ /*colocando uma estrela do unicode antes da minha classe itens através do pseudo-elemento :before*/
+	content: "🟊";
+}
+
+.imagem-beneficios {
+	width: 60%; /*largura de 60%, que completa 100% com os 40% da lista-benefícios, que é o outro composto do conteúdo-beneficios*/
+	opacity: 1; /*essa propriedade vai de 100%(1) a 0 (0), 1 é o máximo de visibilidade; aqui definimos o máximo de visibilidade*/
+	transition: 400ms; /*tempo de transição de 400 milissegundos de 100% para 30%*/
+	box-shadow: 10px 10px 10px 0 #000000; /*criando sombra na caixa da minha imagem, deslocando 10px no eixo X, 10px no eixo Y, de 10px o grau de trasncendência da cor para o transparente, 0 espalhamento/largura da sombra,  e definindo a cor da sombra de preta*/
+}
+
+.imagem-beneficios:hover{
+	opacity: 0.3; /*colocando uma opacidade para que seja visto apenas 30% da imagem quando o mouse estiver por cima*/
+}
+
+.video { /*ajustando o tamanho e centralizando o próprio video com sua div que lhe envolve justamente para ajustes do mesmo*/
+	width: 560px; /*mantendo a largura do prório video*/
+	margin: 2em auto; /*centralizando o video*/
+}
+
+/*Adaptação do site para mobile e celulares - telas de até 480px de largura de 'tela' mesmo, da quantida de pixels por
+ polegada da tela que difere da resolução da tela que Às vezes é bem maior.*/
+@media screen and (max-width: 480px) { /*telas que tenham até no máximo 480px de largula seguirão o estilo aqui definido*/
+	.caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video {
+		width: auto;
+	}
+
+	h1 {
+		text-align: center;
+
+	}
+
+	nav{
+		position: static;
+
+	}
+
+	.lista-beneficios, .imagem-beneficios{
+		width: auto;
+	}
+
+	.produtos {
+		width: auto;
+		padding: 20px 0;
+		
+	}
+	.produtos li {
+		width: auto;
+		display: block;
+		margin: 10px 2%;
+	}
+
+	.enviar {
+		font-size: calc(18px - 20%);
+	}
+
+}
+
